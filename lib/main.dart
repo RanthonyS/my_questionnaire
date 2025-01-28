@@ -40,14 +40,35 @@ class TestPage extends StatefulWidget {
 class _TestPageState extends State<TestPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      const Text(
-        "¿La luna gira alrededor del sol?",
-        style: TextStyle(
-            fontSize: 24, fontWeight: FontWeight.bold, color: Colors.pink),
-      ),
-      TextButton(onPressed: () {}, child: const Text("Verdadero")),
-      TextButton(onPressed: () {}, child: const Text("Falso"))
-    ]);
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Expanded(
+            flex: 3,
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Center(
+                child: Text(
+                  "¿La luna gira alrededor del sol?",
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.pink),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+              child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: TextButton(
+                      onPressed: () {}, child: const Text("Verdadero")))),
+          Expanded(
+              child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child:
+                      TextButton(onPressed: () {}, child: const Text("Falso"))))
+        ]);
   }
 }
